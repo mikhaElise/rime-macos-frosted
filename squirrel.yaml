@@ -1,0 +1,108 @@
+# Squirrel settings
+# encoding: utf-8
+config_version: '2026-04-14'
+
+keyboard_layout: last
+chord_duration: 0.1
+show_notifications_when: appropriate
+
+app_options:
+
+style:
+  color_scheme: macos_frosted_light        # 浅色模式配色方案（对应 preset_color_schemes 中的键名）
+  color_scheme_dark: macos_frosted_dark    # 深色模式配色方案（macOS 深色模式自动切换）
+
+  candidate_list_layout: linear   # 候选词排列：stacked 竖排 / linear 横排
+  text_orientation: horizontal     # 文字方向：horizontal 横向 / vertical 纵向
+  inline_preedit: true             # 预编辑文字是否内嵌到应用光标处（true 则不在候选框显示输入串）
+  inline_candidate: false          # 是否将第一候选词直接内嵌到光标处
+  memorize_size: true              # 记住候选框上次的位置和大小
+  mutual_exclusive: false          # 候选词高亮是否互斥（一般保持 false）
+  translucency: true               # 开启毛玻璃模糊背景（需配色方案 back_color 有透明度）
+  show_paging: false               # 是否显示翻页箭头按钮
+  corner_radius: 5                 # 候选框整体圆角半径（像素）
+  hilited_corner_radius: 8         # 高亮候选项的圆角半径（像素）
+  border_height: -4                # 候选框上下内边距（像素，负值可压缩空白）
+  border_width: -4                 # 候选框左右内边距（像素，负值可压缩空白）
+  line_spacing: 5                  # 竖排时候选词之间的行间距（像素）
+  spacing: 6                       # 预编辑区与候选词区之间的间距（像素）
+  shadow_size: 0                   # 候选框阴影大小（0 表示无阴影）
+  candidate_format: '[label] [candidate] [comment]'  # 候选词显示格式：[label] 序号、[candidate] 候选词、[comment] 注释
+  font_face: 'PingFangSC-Regular'  # 候选词字体（支持逗号分隔多个备用字体）
+  font_point: 17                   # 候选词字号（磅）
+
+
+preset_color_schemes:
+
+  macos_frosted_light:
+    name: "macOS 磨砂 · 浅色"
+    author: mikhaElise
+    translucency: true               # 启用毛玻璃效果
+    color_space: display_p3          # 色彩空间：display_p3（广色域）/ srgb
+    corner_radius: 10                # 候选框圆角（足够大则呈胶囊形）
+    hilited_corner_radius: 10         # 高亮项圆角
+    border_height: -4                # 上下内边距（负值压缩空白）
+    border_width: -4                 # 左右内边距（负值压缩空白）
+    shadow_size: 0                   # 阴影大小
+    font_face: "PingFangSC-Regular"  # 候选词字体
+    font_point: 17                   # 候选词字号
+    label_font_face: "PingFangSC-Regular"  # 序号字体
+    label_font_point: 12             # 序号字号
+    comment_font_face: "PingFangSC-Regular"  # 注释（拼音/注音）字体
+    comment_font_point: 13           # 注释字号
+
+    # 鼠须管颜色格式：0xAA BB GG RR（注意是 BGR 逆序，AA 为 Alpha：00 全透明，FF 不透明）
+    # Alpha 建议 0x60~0x90，太高（接近 FF）磨砂模糊效果会消失
+    back_color: 0x00EBF2F5           # 候选框背景色（冷白）
+    border_color: 0x30FFFFFF         # 边框颜色
+
+    text_color: 0xFF1C2C3C           # 预编辑区文字颜色（输入串）
+    hilited_text_color: 0xFFA72F00   # 预编辑区高亮文字颜色（克莱因蓝）
+    hilited_back_color: 0x00000000   # 预编辑区高亮背景色（全透明）
+
+    candidate_text_color: 0xFF000000 # 候选词文字颜色（黑色）
+    comment_text_color: 0x99807050   # 注释文字颜色（拼音/注音等）
+    label_color: 0xFF444444          # 序号颜色（深灰）
+
+    hilited_candidate_back_color: 0xFFA72F00  # 高亮候选项背景色（克莱因蓝）
+    hilited_candidate_text_color: 0xFFFFFFFF  # 高亮候选项文字颜色（白色）
+    hilited_candidate_label_color: 0xFFFFFFFF # 高亮候选项序号颜色（白色）
+    hilited_comment_text_color: 0x99807050    # 高亮候选项注释颜色
+    preedit_back_color: 0x00000000            # 预编辑区整体背景色（全透明）
+
+
+  macos_frosted_dark:
+    name: "macOS 磨砂 · 深色"
+    author: mikhaElise
+    translucency: true               # 启用毛玻璃效果
+    color_space: display_p3          # 色彩空间：display_p3（广色域）/ srgb
+    corner_radius: 10                # 候选框圆角（足够大则呈胶囊形）
+    hilited_corner_radius: 10        # 高亮项圆角
+    border_height: -4                # 上下内边距（负值压缩空白）
+    border_width: -4                 # 左右内边距（负值压缩空白）
+    shadow_size: 0                   # 阴影大小
+    font_face: "PingFangSC-Regular"  # 候选词字体
+    font_point: 17                   # 候选词字号
+    label_font_face: "PingFangSC-Regular"  # 序号字体
+    label_font_point: 12             # 序号字号
+    comment_font_face: "PingFangSC-Regular"  # 注释（拼音/注音）字体
+    comment_font_point: 13           # 注释字号
+
+    back_color: 0x001C1E20           # 候选框背景色（深蓝黑）
+    border_color: 0x18FFFFFF         # 边框颜色
+
+    text_color: 0xFFDCE8F4           # 预编辑区文字颜色（输入串）
+    hilited_text_color: 0xFF4FBBE6   # 预编辑区高亮文字颜色（互补橙降亮 #E6BB4F）
+    hilited_back_color: 0x00000000   # 预编辑区高亮背景色（全透明）
+
+    candidate_text_color: 0xFFFFFFFF # 候选词文字颜色（白色）
+    comment_text_color: 0x80E0C0A0   # 注释文字颜色（拼音/注音等）
+    label_color: 0xFFAAAAAA          # 序号颜色（浅灰）
+
+    hilited_candidate_back_color: 0xFF4FBBE6  # 高亮候选项背景色（互补橙降亮 #E6BB4F）
+    hilited_candidate_text_color: 0xFF000000  # 高亮候选项文字颜色（黑色）
+    hilited_candidate_label_color: 0xFF000000 # 高亮候选项序号颜色（黑色）
+    hilited_comment_text_color: 0x80E0C0A0    # 高亮候选项注释颜色
+    preedit_back_color: 0x00000000            # 预编辑区整体背景色（全透明）
+
+
